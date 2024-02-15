@@ -46,12 +46,10 @@ class Manager:
 
     def create_password(self, length):
         password = ""
-        if length > 0:
+        if length > 7 and length < 33:
             for _ in range(length):
                 characters = string.ascii_letters + string.digits + '!#$%&()*+,-./:;<=>?@[]^_`{|}~'
                 password += characters[random.randint(0, len(characters) - 1)]
-        else:
-            return ""
         return password
     
     @check_existing_password

@@ -65,6 +65,9 @@ def main():
                 print("Old password is incorrect")
                 continue
             new_password = input("Enter the new password: ")
+            if len(new_password) < 8:
+                print("Password length should be at least 8 characters long")
+                continue
             user.change_password(website, old_password, new_password)
             continue
         elif choice == "4":
